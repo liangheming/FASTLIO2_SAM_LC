@@ -1,0 +1,28 @@
+map_frame: map
+local_frame: local
+body_frame: body
+imu_topic: /livox/imu
+livox_topic: /livox/lidar
+
+local_rate: 20.0
+loop_rate: 1.0
+lio_builder:
+  det_range: 100.0
+  cube_len: 500.0
+  resolution: 0.2
+  move_thresh: 1.5
+  align_gravity: true
+  imu_ext_rot: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+  imu_ext_pos: [-0.011, -0.02329, 0.04412]
+
+loop_closure:
+  activate: true
+  rad_thresh: 0.2
+  dist_thresh: 1.0
+  time_thresh: 30.0
+  loop_pose_search_radius: 20.0
+  loop_pose_index_thresh: 20
+  submap_resolution: 0.25
+  submap_search_num: 25
+  loop_icp_thresh: 0.1
+
